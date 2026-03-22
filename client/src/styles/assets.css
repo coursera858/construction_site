@@ -1,0 +1,290 @@
+/* client/src/styles/assets.css */
+#wrapper {
+    width: 100%;
+}
+
+#tile {
+    padding: 24px 32px 10px;
+}
+
+#tile h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+#operations {
+    padding: 10px 32px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#search-bar {
+    display: flex;
+    gap: 12px;
+}
+
+#operations input {
+    padding: 10px 14px;
+    width: 250px;
+    border: 1px solid var(--grey);
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.88rem;
+    color: var(--dark-text);
+}
+
+#operations select {
+    padding: 10px 14px;
+    border: 1px solid var(--grey);
+    border-radius: 8px;
+    outline: none;
+    background-color: white;
+    font-size: 0.88rem;
+    color: var(--dark-text);
+    cursor: pointer;
+}
+
+#operations > button {
+    padding: 10px 20px;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    transition: background 0.15s;
+}
+
+#operations > button:hover {
+    background-color: #1d4ed8;
+}
+
+/* =========================================
+   Grid Cards Layout (Replaces Table)
+   ========================================= */
+.assets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+    padding: 0 32px 32px;
+}
+
+.asset-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.asset-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Top Section (Icon + Context Meta) */
+.ac-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.ac-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--off-white);
+    border: 1px solid var(--border-light);
+}
+
+.ac-top-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 46px;
+}
+
+.kebab-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.kebab-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--muted-text);
+    cursor: pointer;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.kebab-btn:hover {
+    background: var(--light-grey);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: var(--white);
+    min-width: 140px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 10;
+    border: 1px solid var(--grey);
+    padding: 4px 0;
+}
+
+.kebab-menu:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-content button {
+    padding: 10px 16px;
+    text-align: left;
+    background: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--dark-text);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background 0.15s;
+}
+
+.dropdown-content button:hover {
+    background-color: var(--off-white);
+}
+
+.dropdown-content button.delete {
+    color: var(--red);
+}
+
+.ac-count {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--muted-text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Bottom Section (Text) */
+.ac-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ac-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ac-details-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.ac-status-badge {
+    width: fit-content;
+    padding: 3px 10px;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ac-status-badge.active { 
+    background-color: var(--green-soft, #ecfdf3); 
+    color: var(--green, #16a34a);
+}
+.ac-status-badge.inactive { 
+    background-color: var(--red-soft, #fef2f2); 
+    color: var(--red, #dc2626);
+}
+
+.ac-type {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--muted-text);
+}
+
+.ac-desc {
+    font-size: 0.82rem;
+    color: var(--muted-text);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Pagination Override for Grid Layout */
+.grid-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 32px 32px;
+}
+
+.grid-pagination button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--dark);
+    color: white;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background 0.15s;
+}
+
+.grid-pagination button:hover {
+    background-color: var(--dark-hover);
+}
+
+.grid-pagination button:disabled {
+    background-color: var(--grey);
+    color: var(--muted-text);
+    cursor: not-allowed;
+}
+
+.grid-pagination span {
+    font-size: 0.85rem;
+    color: var(--muted-text);
+    font-weight: 500;
+}

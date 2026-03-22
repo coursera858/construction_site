@@ -1,0 +1,716 @@
+/* =============================================
+   Root Variables — easy to tweak colors globally
+   ============================================= */
+:root {
+  --dark: #1a1f2e;
+  --dark-hover: #252b3b;
+  --dark-border: rgba(255, 255, 255, 0.08);
+
+  --white: #ffffff;
+  --off-white: #f7f8fa;
+  --light-grey: #f0f1f3;
+  --grey: #e3e5e8;
+  --mid-grey: #9ca3af;
+  --dark-text: #1f2937;
+  --muted-text: #6b7280;
+
+  --accent: #2563eb;
+  --accent-soft: #eff4ff;
+  --green: #16a34a;
+  --green-soft: #ecfdf3;
+  --red: #dc2626;
+  --red-soft: #fef2f2;
+  --amber: #d97706;
+  --amber-soft: #fffbeb;
+
+  --radius: 8px;
+}
+
+
+/* =============================================
+   Sidebar — dark, flat, clean
+   ============================================= */
+#side-bar {
+  background-color: black !important;
+  padding: 24px 14px !important;
+}
+
+#logo {
+  margin-bottom: 36px !important;
+  padding: 0 10px;
+}
+
+#logo-first {
+  color: var(--white) !important;
+}
+
+#logo-second {
+  color: var(--accent) !important;
+}
+
+/* nav items */
+#side-bar ul li,
+.tree-view .root {
+  border-radius: var(--radius) !important;
+  color: var(--mid-grey) !important;
+  padding: 9px 12px !important;
+  font-size: 0.88rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+#side-bar ul li a {
+  color: inherit !important;
+  font-weight: 500;
+  font-size: 0.88rem;
+}
+
+/* hover */
+#side-bar ul li:hover,
+.tree-view .root:hover {
+  background-color: var(--dark-hover) !important;
+  color: var(--white) !important;
+}
+
+#side-bar ul li:hover a {
+  color: var(--white) !important;
+}
+
+/* active link — simple highlight, no gradients */
+#side-bar ul li:has(a.active) {
+  background-color: var(--accent) !important;
+  color: var(--white) !important;
+}
+
+#side-bar ul li a.active {
+  color: var(--white) !important;
+}
+
+/* tree section labels */
+.tree-view .root {
+  font-size: 0.72rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: #4b5563 !important;
+  cursor: default !important;
+  padding: 6px 12px !important;
+  margin-top: 18px;
+}
+
+.tree-view .root:hover {
+  background-color: transparent !important;
+  color: #4b5563 !important;
+}
+
+.tree-view .node {
+  border-left: 1px solid var(--dark-border) !important;
+}
+
+/* logout button — pinned to bottom */
+#side-bar {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#side-bar ul {
+  flex: 1;
+}
+
+#sidebar-logout {
+  margin-top: auto;
+  padding: 8px 0;
+  border-top: 1px solid var(--dark-border);
+}
+
+#sidebar-logout button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--mid-grey);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+#sidebar-logout button:hover {
+  background-color: var(--red-soft);
+  color: var(--red);
+}
+
+
+/* =============================================
+   Page Wrapper
+   ============================================= */
+#sub-container {
+  padding: 28px 32px;
+}
+
+#wrapper {
+  width: 100%;
+}
+
+#tile h1 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+
+/* =============================================
+   Search Bar, Filters, Operations
+   ============================================= */
+#operations {
+  padding: 16px 0;
+}
+
+#operations input,
+#operations select {
+  background-color: var(--white) !important;
+  border: 1px solid var(--grey) !important;
+  border-radius: var(--radius);
+  padding: 9px 14px !important;
+  font-size: 0.85rem;
+  color: var(--dark-text);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+#operations input:focus,
+#operations select:focus {
+  border-color: var(--accent) !important;
+}
+
+#operations input::placeholder {
+  color: var(--mid-grey);
+}
+
+#operations button {
+  background-color: var(--dark) !important;
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  padding: 9px 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+#operations button:hover {
+  background-color: var(--dark-hover) !important;
+}
+
+/* =============================================
+   Table Toolbar — filter pills + action button
+   ============================================= */
+.table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+
+.filter-pills {
+  display: flex;
+  gap: 6px;
+}
+
+.pill-btn {
+  padding: 7px 16px;
+  border-radius: var(--radius);
+  border: 1px solid var(--grey);
+  background: var(--white);
+  color: var(--dark-text);
+  font-size: 0.83rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.pill-btn:hover {
+  background: var(--light-grey);
+}
+
+.pill-btn.active {
+  background: var(--dark);
+  color: var(--white);
+  border-color: var(--dark);
+}
+
+.add-btn {
+  padding: 8px 20px;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--dark);
+  color: var(--white);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.add-btn:hover {
+  background: var(--dark-hover);
+}
+
+
+
+
+/* =============================================
+   Table — flat, no shadows, thin lines
+   ============================================= */
+/* Table Container */
+#table-holder {
+  background: var(--white, #ffffff);
+  border-radius: var(--radius, 12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+  overflow: visible; /* Important: Allows kebab dropdown to break out of bounds */
+}
+
+/* Modern Table Layout */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table thead th {
+  padding: 16px 20px;
+  color: var(--muted-text, #6b7280);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--light-grey, #f3f4f6);
+}
+
+table tbody tr {
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid var(--light-grey, #f3f4f6);
+}
+
+table tbody tr:last-child {
+  border-bottom: none;
+}
+
+table tbody tr:hover {
+  background-color: var(--off-white, #f9fafb);
+}
+
+table tbody td {
+  padding: 16px 20px;
+  font-size: 0.875rem;
+  color: var(--dark-text, #111827);
+  vertical-align: middle;
+}
+
+/* Kebab Action Menu */
+.action-menu-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.kebab-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  color: var(--muted-text, #6b7280);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.kebab-btn:hover, .kebab-btn.active {
+  background: var(--light-grey, #f3f4f6);
+  color: var(--dark-text, #111827);
+}
+
+.action-dropdown {
+  position: absolute;
+  right: 30px; /* Shifts menu to the left of the button */
+  top: 0;
+  background: var(--white, #ffffff);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--light-grey, #f3f4f6);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 50;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+}
+
+.action-dropdown button {
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--dark-text, #111827);
+  transition: background 0.1s;
+}
+
+.action-dropdown button:hover {
+  background: var(--off-white, #f9fafb);
+}
+
+.action-dropdown button.delete-btn {
+  color: #ef4444; /* Red for destructive action */
+}
+
+/* Sleek Pagination */
+#pagination {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--light-grey, #f3f4f6);
+  padding-top: 16px;
+}
+
+.pagination-info {
+  font-size: 0.875rem;
+  color: var(--muted-text, #6b7280);
+}
+
+.pagination-info span {
+  font-weight: 600;
+  color: var(--dark-text, #111827);
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.pagination-controls button {
+  background-color: var(--white, #ffffff);
+  border: 1px solid var(--light-grey, #e5e7eb);
+  color: var(--dark-text, #111827);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background-color: var(--off-white, #f9fafb);
+  border-color: var(--muted-text, #d1d5db);
+}
+
+.pagination-controls button:disabled {
+  background-color: var(--off-white, #f9fafb);
+  color: var(--muted-text, #9ca3af);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+
+/* =============================================
+   Status Badges — small, flat pills
+   ============================================= */
+span.active,
+.status.paid,
+.status.returned,
+.status.income {
+  background-color: var(--green-soft);
+  color: var(--green);
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+span.inactive,
+.status.pending,
+.status.expense {
+  background-color: var(--red-soft);
+  color: var(--red);
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.status.partial {
+  background-color: var(--amber-soft);
+  color: var(--amber);
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+
+/* =============================================
+   Action Buttons — icon style
+   ============================================= */
+#actions {
+  display: flex;
+  gap: 6px;
+}
+
+#actions button {
+  font-size: 1.1rem;
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+#actions button:hover {
+  background-color: var(--light-grey);
+}
+
+.view {
+  color: var(--accent);
+}
+
+.edit {
+  color: var(--muted-text);
+}
+
+.delete {
+  color: var(--red);
+}
+
+
+/* =============================================
+   Summary Cards — flat, bordered
+   ============================================= */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-cards .card {
+  background: var(--white) !important;
+  border: 1px solid var(--grey) !important;
+  border-radius: var(--radius) !important;
+  padding: 18px !important;
+  box-shadow: none !important;
+}
+
+/* Income / Expense summary cards (used in ViewProjectPayments) */
+.summary-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--grey);
+  background: var(--white);
+}
+
+.summary-card.income {
+  background: var(--green-soft);
+  border-color: #bbf7d0;
+}
+
+.summary-card.expense {
+  background: var(--red-soft);
+  border-color: #fecaca;
+}
+
+.summary-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.summary-card.income .summary-card-icon {
+  background: #bbf7d0;
+  color: var(--green);
+}
+
+.summary-card.expense .summary-card-icon {
+  background: #fecaca;
+  color: var(--red);
+}
+
+.summary-card h3 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.summary-card.income h3 { color: var(--green); }
+.summary-card.expense h3 { color: var(--red); }
+
+.summary-card p {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.summary-card.income p { color: var(--green); }
+.summary-card.expense p { color: var(--red); }
+
+/* Colour-coded amount cells in transaction tables */
+td.amount.income {
+  font-weight: 700;
+  color: var(--green);
+}
+
+td.amount.expense {
+  font-weight: 700;
+  color: var(--red);
+}
+
+.summary-cards .card h3 {
+  font-size: 0.72rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600 !important;
+  color: var(--muted-text) !important;
+  margin-bottom: 4px !important;
+}
+
+.summary-cards .card p {
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+}
+
+
+/* =============================================
+   Details Section — clean card
+   ============================================= */
+.details-section {
+  background: var(--white) !important;
+  border: 1px solid var(--grey) !important;
+  border-radius: var(--radius) !important;
+  padding: 20px !important;
+  box-shadow: none !important;
+  margin-bottom: 24px;
+}
+
+.details-section h2 {
+  font-size: 1rem !important;
+  font-weight: 600;
+  color: var(--dark-text);
+  margin-bottom: 14px !important;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--grey) !important;
+}
+
+.details-section strong {
+  color: var(--muted-text);
+  font-weight: 500;
+  font-size: 0.82rem;
+}
+
+
+/* =============================================
+   Ledger Tables — side by side, clean
+   ============================================= */
+.ledger-tables h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+
+/* =============================================
+   Modal — minimal overlay
+   ============================================= */
+.modal-holder {
+  background-color: rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  border: 1px solid var(--grey) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+
+/* =============================================
+   Forms — inputs, selects, textareas
+   ============================================= */
+form button {
+  background-color: var(--dark);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.15s;
+}
+
+form button:hover {
+  background-color: var(--dark-hover);
+}
+
+.select-input {
+  border: 1px solid var(--grey) !important;
+  border-radius: var(--radius) !important;
+}
+
+.options {
+  border: 1px solid var(--grey) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+.option:hover {
+  background-color: var(--light-grey) !important;
+}
+
+
+/* =============================================
+   Scrollbar — thin and subtle
+   ============================================= */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--grey);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--mid-grey);
+}

@@ -1,0 +1,233 @@
+/* components.css */
+:root {
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --destructive: #ef4444;
+  --destructive-hover: #dc2626;
+  --background: #ffffff;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: rgba(59, 130, 246, 0.2);
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --foreground: #111827;
+  --radius: 12px;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  height: 36px;
+  padding: 0 16px;
+  gap: 8px;
+  outline: none;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--muted);
+  color: var(--foreground);
+}
+
+.btn-secondary:hover {
+  background-color: #e5e7eb;
+}
+
+.btn-destructive {
+  background-color: var(--destructive);
+  color: white;
+}
+
+.btn-destructive:hover {
+  background-color: var(--destructive-hover);
+}
+
+.btn-sm {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+
+.btn-icon {
+  width: 36px;
+  padding: 0;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Input Styles */
+.input-custom {
+  display: flex;
+  height: 36px;
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--input);
+  background-color: var(--background);
+  padding: 8px 12px;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.input-custom:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--ring);
+}
+
+.input-custom::placeholder {
+  color: var(--muted-foreground);
+  opacity: 0.7;
+}
+
+/* Image Upload Container */
+.upload-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.upload-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.upload-header p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--muted-foreground);
+}
+
+.drop-zone {
+  height: 250px;
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  background-color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.drop-zone:hover {
+  background-color: #ebeef2;
+  border-color: var(--muted-foreground);
+}
+
+.drop-zone.active {
+  background-color: var(--ring);
+  border-color: var(--primary);
+}
+
+.drop-zone-icon {
+  background: white;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-foreground);
+}
+
+.preview-container {
+  position: relative;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.preview-container:hover .preview-image {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.preview-container:hover .overlay {
+  opacity: 1;
+}
+
+.file-info {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--muted-foreground);
+}
+
+.file-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--muted-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.remove-btn:hover {
+  background: var(--muted);
+  color: var(--destructive);
+}
